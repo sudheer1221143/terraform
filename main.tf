@@ -1,12 +1,9 @@
 provider "aws" {
-  region = "us-east-1"  # Change to your desired region
+       region = "ap-south-1"
 }
-
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name"  # Replace with your desired bucket name
-  acl    = "private"  # Adjust ACL as needed
-
-  tags = {
-    Name = "My S3 Bucket"
-  }
+resource "aws_s3_bucket"{
+        bucket = "terraformbucket123"
+        tags = {
+               name = "terraformbucket123"
+}
 }
