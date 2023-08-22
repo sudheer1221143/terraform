@@ -1,9 +1,9 @@
 provider "aws" {
-       region = "ap-south-1a"
+       region = "us-weast-1"
 }
 resource "aws_s3_bucket"{
-        bucket = "terraformbucket123"
+        bucket = "kaalibucket1221"
         tags = {
-               name = "terraformbucket123"
+               name = "kaalibucket1221"
 }
 }
