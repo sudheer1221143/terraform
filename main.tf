@@ -1,11 +1,12 @@
 provider "aws" {
-    region = "ap-southeast-1"  
+  region = "us-east-1"  # Change to your desired region
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-0df7a207adb9748c7" # ap-southeast-1
-  instance_type = "t2.micro"
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-unique-bucket-name"  # Replace with your desired bucket name
+  acl    = "private"  # Adjust ACL as needed
+
   tags = {
-      Name = "TF-Instance"
+    Name = "My S3 Bucket"
   }
 }
