@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-weast-1"  # Update with your desired region
+  region = "Global"  # Update with your desired region
 }
 
 resource "aws_iam_user" "example_user" {
