@@ -1,12 +1,16 @@
 provider "aws" {
-  region = "us-weast-1"  # Change to your desired region
+  region = "ap-southeast-1"  # Update with your desired region
 }
 
-resource "aws_S3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name"  # Replace with your desired bucket name
-  acl    = "public"  # Adjust ACL as needed
+resource "aws_iam_user" "example_user" {
+  name = "example_user"
+}
 
-  tags = {
-    Name = "My S3 Bucket"
-  }
+resource "aws_iam_access_key" "example_user_key" {
+  user = aws_iam_user.example_user.name
+}
+
+resource "aws_iam_user_policy_attachment" "example_user_policy" {
+  user       = aws_iam_user.example_user.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"  # Replace with the desired policy ARN
 }
